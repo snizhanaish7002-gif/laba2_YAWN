@@ -1,50 +1,716 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Головна — Coffee House</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+<style>
+    :root {
+        /* Затверджена палітра кольорів з брендбуку */
+        --c-mist: #EFFAF9;        /* Блакитний туман */
+        --c-teal: #0D5C63;        /* Бурхливий бірюзовий */
+        --c-lavender: #EAD8F2;    /* Лавандова вуаль */
+        --c-purple: #52154E;      /* Глибокий фіолет */
+        --c-navy: #111344;        /* Глибокий флот (основний колір тексту) */
 
-    <header>
-        <h1>Coffee House</h1>
-        <p>Твоя улюблена кава щодня</p>
-    </header>
+        /* Шрифтові пари */
+        --font-heading: 'Oswald', sans-serif;
+        --font-body: 'Inter', sans-serif;
+        --font-accent: 'Cuprum', sans-serif;
+    }
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Головна</a></li>
-            <li><a href="about.html">Про нас</a></li>
-            <li><a href="contacts.html">Контакти</a></li>
-        </ul>
-    </nav>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-    <main>
-        <h2>Ласкаво просимо!</h2>
-        <p>Ми готуємо ароматну каву
-           та створюємо затишну атмосферу.</p>
+    body {
+        font-family: var(--font-body);
+        color: var(--c-navy);
+        background-color: var(--c-mist);
+        line-height: 1.6;
+    }
 
-        <img src="images/coffee.jpg"
-             alt="Чашка кави на дерев'яному столі"
-             width="400">
+    /* --- Header & Navigation --- */
+    header {
+        background-color: var(--c-lavender);      
+        border-bottom: 2px solid var(--c-teal);    
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
 
-        <h2>Наші популярні напої</h2>
-        <ul>
-            <li>Еспресо</li>
-            <li>Капучино</li>
-            <li>Лате</li>
-        </ul>
+    .header-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0.9rem 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap !important;	
+    }
 
+    .brand-link {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        text-decoration: none;
+        color: var(--c-navy);
+        flex-shrink: 0;
+    }
+
+    .brand-logo {
+        width: 44px;
+        height: 44px;
+        border: none;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    .brand-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .brand-title {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        line-height: 1.1;
+        color: var(--c-purple);
+    }
+
+    .brand-subtitle {
+        font-family: var(--font-accent);
+        font-size: 0.95rem;
+        color: var(--c-navy);
+        white-space: nowrap;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+    }
+	
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1.1rem;
+        align-items: center;
+        flex-wrap: nowrap !important;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: var(--c-navy);
+        font-weight: 600;
+        font-size: 0.95rem;
+        white-space: nowrap;
+        transition: color 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+        color: var(--c-purple);
+    }
+
+    .nav-cta {
+        background-color: var(--c-purple);
+        color: var(--c-lavender) !important;
+        padding: 0.5rem 0.95rem;
+        border-radius: 6px;
+        font-weight: 700;
+        transition: opacity 0.2s ease;
+    }
+
+    .nav-cta:hover {
+        opacity: 0.9;
+    }
+
+    /* --- Базові стилі контейнерів --- */
+    .container {
+        max-width: 1050px;
+        margin: 0 auto;
+    }
+	
+	    /* --- Hero Секція --- */
+    .hero {
+        padding: 4.5rem 2rem 3.5rem;
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .hero-tagline {
+        display: inline-block;
+        background-color: var(--c-purple);
+        color: var(--c-lavender);
+        font-family: var(--font-accent);
+        font-size: 1.1rem;
+        font-weight: 700;
+        padding: 0.35rem 1.1rem;
+        border-radius: 20px;
+        margin-bottom: 1.25rem;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+    }
+	
+	.logo {
+        width: 500px;
+        height: 150px;
+        border: none;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    .hero h1 {
+        font-family: var(--font-heading);
+        font-size: 3.2rem;
+        text-transform: uppercase;
+        color: var(--c-purple);
+        margin-bottom: 1.25rem;
+        line-height: 1.15;
+        letter-spacing: 0.5px;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        color: var(--c-navy);
+        margin-bottom: 2.2rem;
+        max-width: 780px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    /* Кнопки дій */
+    .btn {
+        font-family: var(--font-heading);
+        font-size: 0.8rem;
+        letter-spacing: 0.8x;
+        text-transform: uppercase;
+        padding: 0.8rem 1.75rem;
+        border-radius: 6px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform 0.15s ease, opacity 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+    }
+
+    .btn:hover {
+        opacity: 0.92;
+        transform: translateY(-2px);
+    }
+
+    .btn-purple {
+        background-color: var(--c-purple);
+        color: var(--c-lavender);
+        border: 2px solid var(--c-purple);
+    }
+
+    .btn-teal {
+        background-color: var(--c-teal);
+        color: var(--c-mist);
+        border: 2px solid var(--c-teal);
+    }
+
+    .btn-outline {
+        background-color: transparent;
+        color: var(--c-purple);
+        border: 2px solid var(--c-purple);
+    }
+
+    /* СЕКЦІЯ ТИПУ 1: Основний фон — «Блакитний туман» (#EFFAF9)*/
+    .section-on-mist {
+        background-color: var(--c-mist);
+        padding: 4.5rem 2rem;
+    }
+
+    .section-on-mist .section-header-badge {
+        display: inline-block;
+        background-color: var(--c-purple);
+        color: var(--c-lavender);
+        font-family: var(--font-heading);
+        font-size: 1.75rem;
+        text-transform: uppercase;
+        padding: 0.4rem 1.5rem;
+        border-radius: 6px;
+        margin-bottom: 2rem;
+        letter-spacing: 0.5px;
+    }
+
+    .card-lavender {
+        background-color: var(--c-lavender);
+        border: 2px solid var(--c-purple);
+        border-radius: 10px;
+        padding: 2rem;
+        margin-bottom: 1.75rem;
+        box-shadow: 0 6px 16px rgba(17, 19, 68, 0.05);
+    }
+
+    .badge-purple {
+        display: inline-block;
+        background-color: var(--c-purple);
+        color: var(--c-lavender);
+        font-family: var(--font-accent);
+        font-size: 1.25rem;
+        font-weight: 700;
+        padding: 0.3rem 0.85rem;
+        border-radius: 5px;
+        margin-bottom: 0.85rem;
+    }
+
+    .card-lavender p {
+        color: var(--c-navy);
+        font-size: 1.05rem;
+        margin-bottom: 0.6rem;
+    }
+
+    /* СЕКЦІЯ ТИПУ 2: Основний фон — «Лавандова вуаль» (#EAD8F2)*/
+    .section-on-lavender {
+        background-color: var(--c-lavender);
+        padding: 4.5rem 2rem;
+        border-top: 2px solid var(--c-teal);
+        border-bottom: 2px solid var(--c-teal);
+    }
+
+    .section-on-lavender .section-header-badge {
+        display: inline-block;
+        background-color: var(--c-teal);
+        color: var(--c-mist);
+        font-family: var(--font-heading);
+        font-size: 1.75rem;
+        text-transform: uppercase;
+        padding: 0.4rem 1.5rem;
+        border-radius: 6px;
+        margin-bottom: 2rem;
+        letter-spacing: 0.5px;
+    }
+
+    .card-mist {
+        background-color: var(--c-mist);
+        border: 2px solid var(--c-teal);
+        border-radius: 10px;
+        padding: 2rem;
+        margin-bottom: 1.75rem;
+        box-shadow: 0 6px 16px rgba(17, 19, 68, 0.05);
+    }
+
+    .badge-teal {
+        display: inline-block;
+        background-color: var(--c-teal);
+        color: var(--c-mist);
+        font-family: var(--font-accent);
+        font-size: 1.25rem;
+        font-weight: 700;
+        padding: 0.3rem 0.85rem;
+        border-radius: 5px;
+        margin-bottom: 0.85rem;
+    }
+
+    .card-mist p {
+        color: var(--c-navy);
+        font-size: 1.05rem;
+        margin-bottom: 0.6rem;
+    }
+
+    /* --- Сітка для карток (2 колонки) --- */
+    .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+    }
+
+    /* --- Блок статистики / Досягнень --- */
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.25rem;
+        margin-top: 1.5rem;
+    }
+
+    .stat-card {
+        background: #FFFFFF;
+        border: 2px solid var(--c-teal);
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .stat-number {
+        font-family: var(--font-heading);
+        font-size: 2.8rem;
+        color: var(--c-purple);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+        font-family: var(--font-accent);
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--c-navy);
+    }
+
+    /* --- Блок подій (Events teaser) --- */
+    .event-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .event-date {
+        font-family: var(--font-accent);
+        font-size: 1rem;
+        color: var(--c-teal);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    .event-actions {
+        margin-top: 1.25rem;
+    }
+
+    /* --- Секція заклику до дії (CTA Banner) --- */
+    .cta-banner {
+        text-align: center;
+        padding: 3rem 2rem;
+        background-color: var(--c-mist);
+        border: 2px solid var(--c-purple);
+        border-radius: 12px;
+    }
+
+    .cta-banner h3 {
+        font-family: var(--font-heading);
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        color: var(--c-purple);
+        margin-bottom: 1rem;
+    }
+
+    .cta-banner p {
+        max-width: 650px;
+        margin: 0 auto 1.75rem;
+        font-size: 1.1rem;
+    }
+
+    /* --- Footer (Глибокий флот) --- */
+    footer {
+        background-color: var(--c-navy);
+        color: var(--c-mist);
+        padding: 3.5rem 2rem 1.5rem;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-col h3 {
+        font-family: var(--font-heading);
+        font-size: 1.3rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 1rem;
+        color: var(--c-lavender);
+    }
+
+    .footer-col ul {
+        list-style: none;
+    }
+
+    .footer-col li {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-col a {
+        color: var(--c-mist);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover {
+        color: var(--c-lavender);
+    }
+
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 0 auto;
+        border-top: 1px solid rgba(239, 250, 249, 0.15);
+        padding-top: 1.5rem;
+        text-align: center;
+        font-size: 0.85rem;
+        opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+        .header-container {
+            padding: 0.6rem 1rem;
+        }
+        nav ul {
+            gap: 0.6rem;
+        }
+        nav a {
+            font-size: 0.85rem;
+        }
+        .brand-subtitle {
+            display: none;
+        }
+        .hero h1 {
+            font-size: 2.3rem;
+        }
+        .hero p {
+            font-size: 1.05rem;
+        }
+        .nav-cta {
+            padding: 0.4rem 0.65rem;
+            font-size: 0.85rem;
+        }
+        .btn {
+            width: 100%;
+        }
+    }
+</style>
+
+
+<!-- Шапка сайту -->
+<header>
+    <div class="header-container">
+        <a href="index.html" class="brand-link">
+            <img src="images/logo.gitkeep" alt="Логотип студентської організації YAWN" class="brand-logo">
+            <div class="brand-text">
+                <span class="brand-title">YAWN</span>
+                <span class="brand-subtitle">Young Academics Without Naps</span>
+            </div>
+        </a>
+        <nav aria-label="Основна навігація">
+            <ul>
+                <li><a href="index.html" class="active">Головна</a></li>
+                <li><a href="events.html">Події</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contacts.html">Контакти &amp; Партнерство</a></li>
+                <li><a href="join.html" class="nav-cta">Приєднатися</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <!-- Головний Hero-блок (Блакитний туман) -->
+    <section class="hero">
+        <span class="hero-tagline">Студентський хаб самореалізації</span>
+		<img src="images/abreviatura.png" alt="Логотип студентської організації YAWN" class="logo">
         <p>
-            <a href="about.html">Дізнатися більше про нас</a>
+            Наша команда YAWN зробить ваше життя цікавішим!
         </p>
-    </main>
+        <div class="hero-buttons">
+            <a href="join.html" class="btn btn-purple">Долучитися до команди</a>
+            <a href="events.html" class="btn btn-teal">Календар подій</a>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 Coffee House</p>
-    </footer>
+    <!-- СЕКЦІЯ 1: Місія та Цілі (Лавандова вуаль) -->
+    <section class="section-on-lavender">
+        <div class="container">
+            <div>
+                <h2 class="section-header-badge">Хто ми та яка наша мета</h2>
+            </div>
 
-</body>
-</html>
+            <div class="grid-2">
+                <article class="card-mist">
+                    <span class="badge-teal">Наша Місія</span>
+                    <p>
+                        Створити доступний та прозорий простір взаємодії, що висвітлює студентські досягнення, 
+                        спрощує шлях від першої ідеї до готового проєкту та розкриває лідерський потенціал кожного учасника.
+                    </p>
+                </article>
+
+                <article class="card-mist">
+                    <span class="badge-teal">Єдиний простір замість хаосу</span>
+                    <p>
+                        Більше не потрібно шукати анонси в розрізнених чатах. YAWN об'єднує всі активності, реєстрації, 
+                        менторство та контакти партнерів на одній зрозумілій платформі.
+                    </p>
+                </article>
+            </div>
+
+            <!-- Ключові показники організації -->
+            <div class="card-mist" style="margin-bottom: 0;">
+                <span class="badge-teal">YAWN у цифрах</span>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Проведених подій</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1200+</div>
+                        <div class="stat-label">Учасників лекцій</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">40+</div>
+                        <div class="stat-label">Активних мейкерів</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Партнерів з бізнесу</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦІЯ 2: Напрями розвитку (Блакитний туман) -->
+    <section class="section-on-mist">
+        <div class="container">
+            <div>
+                <h2 class="section-header-badge">Напрями діяльності команди</h2>
+            </div>
+
+            <div class="grid-2">
+                <article class="card-lavender">
+                    <span class="badge-purple">Event Management</span>
+                    <p>
+                        Організація хакатонів, мітапів, воркшопів і відкритих дискусій від концепції та пошуку локації 
+                        до координації гостей у день заходу.
+                    </p>
+                </article>
+
+                <article class="card-lavender">
+                    <span class="badge-purple">PR, Media &amp; Design</span>
+                    <p>
+                        Створення айдентики, копірайтинг, ведення соціальних мереж і фото/відеопродакшн, що привертає 
+                        увагу молоді до важливих освітніх ініціатив.
+                    </p>
+                </article>
+
+                <article class="card-lavender">
+                    <span class="badge-purple">Partnership &amp; Fundraising</span>
+                    <p>
+                        Комунікація з провідними IT-компаніями, грантовими фондами та університетськими структурами 
+                        для залучення підтримки та експертів.
+                    </p>
+                </article>
+
+                <article class="card-lavender">
+                    <span class="badge-purple">IT &amp; Digital Solutions</span>
+                    <p>
+                        Розробка веб-ресурсів, чат-ботів та цифрових інструментів для спрощення реєстрацій, 
+                        збору аналітики та взаємодії зі спільнотою.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦІЯ 3: Найближчі події (Лавандова вуаль) -->
+    <section class="section-on-lavender">
+        <div class="container">
+            <div>
+                <h2 class="section-header-badge">Анонси найближчих подій</h2>
+            </div>
+
+            <div class="grid-2">
+                <article class="card-mist event-item">
+                    <div>
+                        <span class="badge-teal">Воркшоп</span>
+                        <div class="event-date">📅 18 Листопада, 17:00 | Офлайн (Хаб)</div>
+                        <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem; font-size: 1.4rem; color: var(--c-purple);">
+                            Project Management: від ідеї до релізу
+                        </h3>
+                        <p>
+                            Дізнайтеся, як структуризувати задачі в команді, налаштувати Kanban-дошки та доводити ініціативи 
+                            до результату без вигорання.
+                        </p>
+                    </div>
+                    <div class="event-actions">
+                        <a href="events.html" class="btn btn-teal" style="font-size: 0.95rem; padding: 0.5rem 1rem;">Деталі та реєстрація</a>
+                    </div>
+                </article>
+
+                <article class="card-mist event-item">
+                    <div>
+                        <span class="badge-teal">Панельна дискусія</span>
+                        <div class="event-date">📅 25 Листопада, 18:30 | Онлайн (Zoom)</div>
+                        <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem; font-size: 1.4rem; color: var(--c-purple);">
+                            Кар'єра в IT: старт під час навчання
+                        </h3>
+                        <p>
+                            Запрошені спікери з провідних компаній поділяться досвідом пошуку першої стажувальної позиції, 
+                            складання CV та проходження технічних співбесід.
+                        </p>
+                    </div>
+                    <div class="event-actions">
+                        <a href="events.html" class="btn btn-teal" style="font-size: 0.95rem; padding: 0.5rem 1rem;">Деталі та реєстрація</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦІЯ 4: Заклик до дії / Приєднатися чи Співпраця (Блакитний туман) -->
+    <section class="section-on-mist">
+        <div class="container">
+            <div class="card-lavender cta-banner">
+                <span class="badge-purple">Готовий діяти?</span>
+                <h3>Твій шлях у YAWN починається тут</h3>
+                <p>
+                    Шукаєш можливості отримати реальний досвід, знайти однодумців та втілити власні ідеї? 
+                    Обирай свій напрям і приєднуйся до команди або пропонуй партнерство для свого проєкту чи компанії.
+                </p>
+                <div class="hero-buttons">
+                    <a href="join.html" class="btn btn-purple">Подати заявку на вступ</a>
+                    <a href="contacts.html" class="btn btn-outline">Стати партнером</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Підвал сайту -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>YAWN</h3>
+            <p>Young Academics Without Naps — студентський хаб для самореалізації, проєктів і партнерств.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Навігація</h3>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="events.html">Події</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contacts.html">Контакти &amp; Партнерство</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Зв'язок</h3>
+            <ul>
+                <li><a href="join.html">Подати заявку на вступ</a></li>
+                <li><a href="contacts.html#partner-form">Запропонувати партнерство</a></li>
+                <li><a href="mailto:YAWN_here@gmail.com">YAWN_here@gmail.com</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Ми у мережі</h3>
+            <ul>
+                <li><a href="https://t.me" target="_blank" rel="noopener noreferrer">Telegram канал</a></li>
+                <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram спільноти</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 YAWN (Young Academics Without Naps). Всі права захищено.</p>
+    </div>
+</footer>
