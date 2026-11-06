@@ -28,101 +28,117 @@
 
     /* --- Header & Navigation --- */
     header {
-        background-color: var(--c-lavender);      
-        border-bottom: 2px solid var(--c-teal);    
-        position: sticky;
-        top: 0;
-        z-index: 100;
-    }
+            background-color: var(--c-mist);
+            border-bottom: 2px solid var(--c-purple);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+		header {
+			background-color: var(--c-lavender);      
+			border-bottom: 2px solid var(--c-teal);    
+			position: sticky;
+			top: 0;
+			z-index: 100;
+		}
+		
+/* якщо перший блок буде рожевим
+header {
+    background-color: var(--c-mist);    
+    border-bottom: 2px solid var(--c-purple);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+*/
 
-    .header-container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0.9rem 1.25rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: nowrap !important;	
-    }
+        .header-container {
+            /*max-width: 1200px; */
+			width: 100%;
+            margin: 0 auto;
+            padding: 1rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+			flex-wrap: nowrap !important;	
+        }
 
-    .brand-link {
-        display: flex;
-        align-items: center;
-        gap: 0.85rem;
-        text-decoration: none;
-        color: var(--c-navy);
-        flex-shrink: 0;
-    }
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            text-decoration: none;
+            color: var(--c-navy);
+			flex-shrink: 0;
+        }
 
-    .brand-logo {
-        width: 44px;
-        height: 44px;
-        border: none;
-        object-fit: contain;
-        flex-shrink: 0;
-    }
+        .brand-logo {
+            width: 44px;
+            height: 44px;
+   			border: none;
+			object-fit: contain;
+			flex-shrink: 0;
+        }
 
-    .brand-text {
-        display: flex;
-        flex-direction: column;
-    }
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
 
-    .brand-title {
-        font-family: var(--font-heading);
-        font-size: 1.5rem;
-        letter-spacing: 1px;
-        line-height: 1.1;
-        color: var(--c-purple);
-    }
+        .brand-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            line-height: 1.1;
+            color: var(--c-purple);
+        }
 
-    .brand-subtitle {
-        font-family: var(--font-accent);
-        font-size: 0.95rem;
-        color: var(--c-navy);
-        white-space: nowrap;
-    }
+        .brand-subtitle {
+            font-family: var(--font-accent);
+            font-size: 0.95rem;
+            color: var(--c-navy);
+			white-space: nowrap;
+        }
 
-    nav {
-        display: flex;
-        align-items: center;
-        flex-shrink: 0;
-    }
-	
-    nav ul {
-        list-style: none;
-        display: flex;
-        gap: 1.1rem;
-        align-items: center;
-        flex-wrap: nowrap !important;
-    }
+		nav {
+			display: flex;
+			align-items: center;
+			flex-shrink: 0;
+		}
+		
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+			flex-wrap: nowrap !important;
+        }
 
-    nav a {
-        text-decoration: none;
-        color: var(--c-navy);
-        font-weight: 600;
-        font-size: 0.95rem;
-        white-space: nowrap;
-        transition: color 0.2s ease;
-    }
+        nav a {
+            text-decoration: none;
+            color: var(--c-navy);
+            font-weight: 600;
+            font-size: 0.95rem;
+			white-space: nowrap;
+            transition: color 0.2s ease;
+        }
 
-    nav a:hover,
-    nav a.active {
-        color: var(--c-purple);
-    }
+        nav a:hover,
+        nav a.active {
+            color: var(--c-purple);
+        }
 
-    .nav-cta {
-        background-color: var(--c-purple);
-        color: var(--c-lavender) !important;
-        padding: 0.5rem 0.95rem;
-        border-radius: 6px;
-        font-weight: 700;
-        transition: opacity 0.2s ease;
-    }
+        .nav-cta {
+            background-color: var(--c-purple);
+            color: var(--c-lavender) !important;
+            padding: 0.5rem 0.85rem;
+            border-radius: 6px;
+            font-weight: 700;
+        }
 
-    .nav-cta:hover {
-        opacity: 0.9;
-    }
+        .nav-cta:hover {
+            opacity: 0.9;
+        }
 
     /* --- Базові стилі контейнерів --- */
     .container {
