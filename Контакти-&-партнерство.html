@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти та партнерство — YAWN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+        header, nav, main, footer, section, article {
+            padding: 16px;
+        }
+        header, footer {
+            background-color: #f2f2f2;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 16px;
+        }
+        img {
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin: 8px 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="Головна.html">
+            <img src="images/logo.gitkeep" alt="Логотип студентської організації YAWN">
+        </a>
+        <p><strong>YAWN</strong> — Young Academics Without Naps</p>
+
+        <nav aria-label="Основна навігація">
+            <ul>
+                <li><a href="Головна.html">Головна</a></li>
+                <li><a href="Події.html">Події</a></li>
+                <li><a href="Питання-та-відповіді.html">Питання та відповіді</a></li>
+                <li><a href="Контакти-&-партнерство.html">Контакти та партнерство</a></li>
+                <li><a href="Приєднатися.html">Приєднатися</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Контакти та партнерство</h1>
+            <p>Зв'яжіться з командою YAWN для співпраці, організації спільних заходів або інформаційної підтримки.</p>
+        </section>
+
+        <section>
+            <h2>Контактна інформація</h2>
+            <ul>
+                <li>Електронна пошта: <a href="mailto:YAWN_here@gmail.com">YAWN_here@gmail.com</a></li>
+                <li>Telegram канал: <a href="https://t.me" target="_blank" rel="noopener noreferrer">t.me/yawn_hub</a></li>
+                <li>Instagram спільноти: <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">instagram.com/yawn_hub</a></li>
+                <li>Локація хабу: м. Київ, студентський коворкінг</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Формати партнерства</h2>
+
+            <article>
+                <h3>Організація спільних подій</h3>
+                <p>Проведення воркшопів, лекцій, хакатонів та кар'єрних зустрічей за участю експертів вашої компанії.</p>
+            </article>
+
+            <article>
+                <h3>Менторська та ресурсна підтримка</h3>
+                <p>Надання менторів для студентських команд, призів для учасників або грантової підтримки проєктів.</p>
+            </article>
+
+            <article>
+                <h3>Інформаційне партнерство</h3>
+                <p>Взаємне висвітлення анонсів, стажувань та освітніх можливостей для студентської аудиторії.</p>
+            </article>
+        </section>
+
+        <section id="partner-form">
+            <h2>Запропонувати партнерство</h2>
+            <form action="#" method="post">
+                <label for="org-name">Назва компанії або організації</label>
+                <input type="text" id="org-name" name="org_name" required>
+
+                <label for="contact-person">Контактна особа</label>
+                <input type="text" id="contact-person" name="contact_person" required>
+
+                <label for="partner-email">Електронна пошта</label>
+                <input type="email" id="partner-email" name="partner_email" required>
+
+                <label for="format">Формат співпраці</label>
+                <select id="format" name="format">
+                    <option value="events">Спільні події та воркшопи</option>
+                    <option value="mentorship">Менторство та призи</option>
+                    <option value="media">Інформаційне партнерство</option>
+                    <option value="other">Інше</option>
+                </select>
+
+                <label for="message">Короткий опис пропозиції</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Надіслати пропозицію</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>YAWN — Young Academics Without Naps</p>
+        <ul>
+            <li><a href="Головна.html">Головна</a></li>
+            <li><a href="Події.html">Події</a></li>
+            <li><a href="Питання-та-відповіді.html">Питання та відповіді</a></li>
+            <li><a href="Контакти-&-партнерство.html">Контакти та партнерство</a></li>
+            <li><a href="Приєднатися.html">Приєднатися</a></li>
+            <li><a href="Контакти-&-партнерство.html#partner-form">Запропонувати партнерство</a></li>
+            <li><a href="mailto:YAWN_here@gmail.com">YAWN_here@gmail.com</a></li>
+            <li><a href="https://t.me" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+        <p>© 2026 YAWN (Young Academics Without Naps).</p>
+    </footer>
+
+</body>
+</html>

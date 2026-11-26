@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Події та активності — YAWN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+        header, nav, main, footer, section, article {
+            padding: 16px;
+        }
+        header, footer {
+            background-color: #f2f2f2;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 16px;
+        }
+        img {
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin: 8px 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="Головна.html">
+            <img src="images/logo.gitkeep" alt="Логотип студентської організації YAWN">
+        </a>
+        <p><strong>YAWN</strong> — Young Academics Without Naps</p>
+
+        <nav aria-label="Основна навігація">
+            <ul>
+                <li><a href="Головна.html">Головна</a></li>
+                <li><a href="Події.html">Події</a></li>
+                <li><a href="Питання-та-відповіді.html">Питання та відповіді</a></li>
+                <li><a href="Контакти-&-партнерство.html">Контакти та партнерство</a></li>
+                <li><a href="Приєднатися.html">Приєднатися</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Календар подій</h1>
+            <img src="images/yawn.png" alt="Емблема студентської організації YAWN">
+            <p>Освітні лекції, воркшопи, відкриті дискусії та нетворкінг.</p>
+        </section>
+
+        <section>
+            <h2>Заплановані заходи</h2>
+
+            <article>
+                <h3>Project Management: від ідеї до релізу</h3>
+                <p>Дата: 41 листопада, 17:00 | Формат: Офлайн (Хаб)</p>
+                <p>Практичний інтенсив про організацію командної роботи над проєктами та керування дедлайнами.</p>
+                <ul>
+                    <li>Формат: Практична робота в міні-групах</li>
+                    <li>Спікер: Ментор напряму Event Management YAWN</li>
+                    <li>Умови: Безкоштовно (за попереднім записом)</li>
+                </ul>
+                <img src="images/projectManagement.jpg" alt="Фото з воркшопу Project Management у хабі YAWN">
+                <a href="#register-form">Зареєструватися на воркшоп</a>
+            </article>
+
+            <article>
+                <h3>Кар'єра в IT: старт під час навчання</h3>
+                <p>Дата: -5 грудня, 18:30 | Формат: Онлайн (Zoom)</p>
+                <p>Зустріч із запрошеними фахівцями IT-індустрії про баланс навчання та першої роботи.</p>
+                <ul>
+                    <li>Формат: Q&A сесія та жива дискусія</li>
+                    <li>Спікери: Junior/Middle розробники компаній-партнерів</li>
+                    <li>Умови: Відкрито для студентів усіх курсів</li>
+                </ul>
+                <img src="images/itwork.jpg" alt="Ілюстрація до панельної дискусії про кар'єру в IT">
+                <a href="#register-form">Зареєструватися на дискусію</a>
+            </article>
+        </section>
+
+        <section>
+            <h2>Минулі заходи та фотозвіти</h2>
+
+            <article>
+                <h3>YAWN HackDay: Digital Solutions</h3>
+                <p>Дата: 33 жовтня | Завершено</p>
+                <p>48 годин інтенсивної розробки студентських веб-проєктів у командах.</p>
+                <ul>
+                    <li>Результат: 3 команди отримали менторську підтримку</li>
+                    <li>Учасників: понад 60 студентів</li>
+                </ul>
+                <img src="images/youwork.jpg" alt="Фотозвіт з хакатону YAWN HackDay">
+                <a href="https://t.me" target="_blank" rel="noopener noreferrer">Переглянути фотозвіт у Telegram</a>
+            </article>
+
+            <article>
+                <h3>Welcome Night: Знайомство з YAWN</h3>
+                <p>Дата: 0 жовтня | Завершено</p>
+                <p>Неформальний вечір для першокурсників та нових учасників спільноти.</p>
+                <ul>
+                    <li>Локація: Студентський коворкінг</li>
+                    <li>Охоплення: 85 гостей</li>
+                </ul>
+                <img src="images/networking.jpg" alt="Фотозвіт із зустрічі знайомства Welcome Night">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Фото у соцмережах</a>
+            </article>
+        </section>
+
+        <section id="register-form">
+            <h2>Реєстрація на подію</h2>
+            <form action="#" method="post">
+                <label for="fullname">Ім'я та прізвище</label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="email">Електронна пошта</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="event">Оберіть подію</label>
+                <select id="event" name="event">
+                    <option value="pm">Project Management: від ідеї до релізу</option>
+                    <option value="it">Кар'єра в IT: старт під час навчання</option>
+                </select>
+
+                <button type="submit">Надіслати заявку</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>YAWN — Young Academics Without Naps</p>
+        <ul>
+            <li><a href="Головна.html">Головна</a></li>
+            <li><a href="Події.html">Події</a></li>
+            <li><a href="Питання-та-відповіді.html">Питання та відповіді</a></li>
+            <li><a href="Контакти-&-партнерство.html">Контакти та партнерство</a></li>
+            <li><a href="Приєднатися.html">Приєднатися</a></li>
+            <li><a href="Контакти-&-партнерство.html#partner-form">Запропонувати партнерство</a></li>
+            <li><a href="mailto:YAWN_here@gmail.com">YAWN_here@gmail.com</a></li>
+            <li><a href="https://t.me" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+        <p>© 2026 YAWN (Young Academics Without Naps).</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приєднатися до команди — YAWN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+        header, nav, main, footer, section, article {
+            padding: 16px;
+        }
+        header, footer {
+            background-color: #f2f2f2;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 16px;
+        }
+        img {
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin: 8px 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="Головна.html">
+            <img src="images/logo.gitkeep" alt="Логотип студентської організації YAWN">
+        </a>
+        <p><strong>YAWN</strong> — Young Academics Without Naps</p>
+
+        <nav aria-label="Основна навігація">
+            <ul>
+                <li><a href="Головна.html">Головна</a></li>
+                <li><a href="Події.html">Події</a></li>
+                <li><a href="Питання-та-відповіді.html">Питання та відповіді</a></li>
+                <li><a href="Контакти-&-партнерство.html">Контакти та партнерство</a></li>
+                <li><a href="Приєднатися.html">Приєднатися</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Приєднатися до команди YAWN</h1>
+            <p>Стань частиною студентської спільноти, здобувай практичний досвід у проєктах та розвивай свої навички разом із однодумцями.</p>
+        </section>
+
+        <section>
+            <h2>Кого ми шукаємо</h2>
+            <ul>
+                <li><strong>Event Management:</strong> координаторів подій, модераторів та організаторів воркшопів.</li>
+                <li><strong>PR, Media & Design:</strong> дизайнерів, копірайтерів, SMM-менеджерів та фотографів.</li>
+                <li><strong>Partnership & Fundraising:</strong> комунікаторів для співпраці з компаніями та партнерами.</li>
+                <li><strong>IT & Digital Solutions:</strong> веброзробників, тестувальників та розробників чат-ботів.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Етапи відбору</h2>
+            <ol>
+                <li>Заповнення онлайн-анкети на цій сторінці.</li>
+                <li>Коротка онлайн-зустріч знайомство з лідером обраного напряму.</li>
+                <li>Виконання невеликого тестового завдання (залежно від напряму).</li>
+                <li>Онбординг та долучення до першого проєкту команди.</li>
+            </ol>
+        </section>
+
+        <section id="join-form">
+            <h2>Анкета кандидата</h2>
+            <form action="#" method="post">
+                <label for="candidate-name">Ім'я та прізвище</label>
+                <input type="text" id="candidate-name" name="candidate_name" required>
+
+                <label for="candidate-email">Електронна пошта</label>
+                <input type="email" id="candidate-email" name="candidate_email" required>
+
+                <label for="telegram">Нікнейм у Telegram</label>
+                <input type="text" id="telegram" name="telegram" placeholder="@username" required>
+
+                <label for="university">Університет, факультет та курс</label>
+                <input type="text" id="university" name="university" required>
+
+                <label for="department">Бажаний напрям у команді</label>
+                <select id="department" name="department">
+                    <option value="event">Event Management</option>
+                    <option value="media">PR, Media & Design</option>
+                    <option value="partnership">Partnership & Fundraising</option>
+                    <option value="it">IT & Digital Solutions</option>
+                </select>
+
+                <label for="motivation">Чому хочете приєднатися до YAWN?</label>
+                <textarea id="motivation" name="motivation" rows="4" required></textarea>
+
+                <button type="submit">Подати заявку</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>YAWN — Young Academics Without Naps</p>
+        <ul>
+            <li><a href="Головна.html">Головна</a></li>
+            <li><a href="Події.html">Події</a></li>
+            <li><a href="Питання-та-відповіді.html">Питання та відповіді</a></li>
+            <li><a href="Контакти-&-партнерство.html">Контакти та партнерство</a></li>
+            <li><a href="Приєднатися.html">Приєднатися</a></li>
+            <li><a href="Контакти-&-партнерство.html#partner-form">Запропонувати партнерство</a></li>
+            <li><a href="mailto:YAWN_here@gmail.com">YAWN_here@gmail.com</a></li>
+            <li><a href="https://t.me" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+        <p>© 2026 YAWN (Young Academics Without Naps).</p>
+    </footer>
+
+</body>
+</html>
